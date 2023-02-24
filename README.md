@@ -2,7 +2,6 @@
 [![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/)
 
 
-
 This Terraform module is an helper module used to generate a map(object)  consisting of Azure Tags considered as base(core) tags to be added to the resources we deploy on Azure.
 
 If new TAGS are required they should be added to the locals-tags.tf file and declared in the variables file.

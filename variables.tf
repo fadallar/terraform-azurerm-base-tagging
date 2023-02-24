@@ -22,11 +22,11 @@ variable "spoc" {
 variable "costcenter" {
   description = "Tag - Cost Center associated with the workload "
   type        = string
-  default = ""
+  default     = ""
 }
 
 variable "change" {
   description = "Tag - Snow change request"
   type        = string
-  default = ""
+  default     = ""
 }
