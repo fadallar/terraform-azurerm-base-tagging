@@ -10,7 +10,7 @@ variable "owner" {
 }
 variable "environment" {
   description = "Tag -  SDLC Environment the resource is part of"
-  type = string
+  type        = string
 }
 
 variable "spoc" {
@@ -32,19 +32,19 @@ variable "change" {
 
 variable "tlp_colour" {
   description = "Tag - Traffic Light Protocol colour"
-  type = string
+  type        = string
   validation {
-    condition = contains(["RED","AMBER","GREEN","WHITE"],var.tlp_colour)
+    condition     = contains(["RED", "AMBER", "GREEN", "WHITE"], var.tlp_colour)
     error_message = "Invalid variable: ${var.tlp.colour}. The valid TLP colours are RED, AMBER, GREEN, WHITE"
   }
 }
 
 variable "cia_rating" {
   description = "Tag - CIA Rating "
-  type = string
+  type        = string
 }
 
 variable "technical_owner" {
   description = "Tag - Primary Group supporting the application this resource is part of - match CMDB supported_by"
-  type = string
+  type        = string
 }
