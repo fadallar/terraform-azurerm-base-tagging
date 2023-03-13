@@ -35,7 +35,7 @@ variable "tlp_colour" {
   type        = string
   validation {
     condition     = contains(["RED", "AMBER", "GREEN", "WHITE"], var.tlp_colour)
-    error_message = "Invalid variable: ${var.tlp.colour}. The valid TLP colours are RED, AMBER, GREEN, WHITE"
+    error_message = "Invalid variable: ${var.tlp_colour}. The valid TLP colours are RED, AMBER, GREEN, WHITE"
   }
 }
 
