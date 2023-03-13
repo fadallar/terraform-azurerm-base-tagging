@@ -9,6 +9,5 @@ locals {
     TLP            = var.tlp_colour
     CiaRating      = var.cia_rating
     TechnicalOwner = var.technical_owner
-
   }
 }
