@@ -2,11 +2,11 @@
 [![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/)
 
 
-This Terraform module is an helper module used to generate a map(object)  consisting of Azure Tags considered as base(core) tags to be added to the resources we deploy on Azure.
+This Terraform module is an helper module used to generate a map(string)  consisting of Azure Tags considered as base(core) tags to be added to the resources we deploy on Azure.
 
 If new TAGS are required they should be added to the locals-tags.tf file and declared in the variables file.
 
-The map(object), consisting of the Tags, is exposed as an output of the module and named "base_tags"
+The map(string), consisting of the Tags, is exposed as an output of the module and named "base_tags"
 
 The following code snippet shows an example of consuming the base tags for a resource
 
@@ -15,12 +15,16 @@ module "base_tagging" {
   source  = "app.terraform.io/<ORGANIZATION>/base-tagging/azurerm"
   version = "x.y.z"
   environment = var.environment
-  stack = var.stack
+  application = var.application
   spoc =  var.spoc
   change = var.change
   costcenter = var.costcenter
   owner = var.owner
-}
+  application = var.application
+  tlp_colour = var.tlp_colour
+  cia_rating = var.cia_rating
+  technical_owner = var.technical_owner
+  }
 
 resource "azurerm_resource_group" "main_rg" {
   name     = "myresourcegroup"
@@ -35,7 +39,7 @@ resource "azurerm_resource_group" "main_rg" {
 
 Microsoft Azure documentation: [Azure Resource Tagging](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json)
 <!-- BEGIN_TF_DOCS -->
-    ## Requirements
+## Requirements
 
 No requirements.
 
